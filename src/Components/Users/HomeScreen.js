@@ -5,6 +5,7 @@ import * as userActions from '../../actions/userActions';
 import Spinner from '../General/Spinner';
 import Error from '../General/Error';
 import Table from './Table';
+import { Link } from 'react-router-dom';
 
 
 
@@ -29,6 +30,7 @@ class HomeScreen extends Component {
         return(
             <div>
                 { this.addCharecters() }
+                <Link to="/contact">Click aqui</Link>
             </div>
         )
     }

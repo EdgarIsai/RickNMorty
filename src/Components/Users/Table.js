@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 const Table = (props) => {
     const addRow = () => (
         props.users.map(user => (
-            <tr>
+            <tr key={user.id}>
                 <td>{user.name}</td>
                 <td>{user.status}</td>
                 <td>{user.species}</td>
@@ -16,9 +16,11 @@ const Table = (props) => {
     return (
         <table>
             <thead>
-                <tr>Name</tr>
-                <tr>State</tr>
-                <tr>Species</tr>
+                <tr>
+                    <th>Name</th>
+                    <th>State</th>
+                    <th>Species</th>
+                </tr>
             </thead>
             <tbody>
                 {addRow()}
