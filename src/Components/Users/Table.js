@@ -1,31 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import "../../css/Users.css";
+
 
 const Table = (props) => {
-    const addRow = () => (
-        props.users.map(user => (
-            <tr key={user.id}>
-                <td>{user.name}</td>
-                <td>{user.status}</td>
-                <td>{user.species}</td>
-            </tr>
-        ))
-    )
+    const addRow = (users) => {
+        return (props.users.map(user => {
+            return(
+                <div id={`user${user.id}`} className="character clearfix">
+                    <img src={user.image} alt="Character" className="characterImage"/>
+                    <h4 >{user.name}</h4>
+                    <h5>{user.species}</h5>
+                </div>
+            ) 
+        }))
+    }
 
 
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>State</th>
-                    <th>Species</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div className="grid-container">
                 {addRow()}
-            </tbody>
-        </table>
+        </div>
     )
 
 }

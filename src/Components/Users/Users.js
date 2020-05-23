@@ -9,11 +9,12 @@ import { Link } from 'react-router-dom';
 
 
 
-class HomeScreen extends Component {
+class Users extends Component {
     componentDidMount() {
         if(!this.props.users.length) {
             this.props.bringAll();
         }
+
     }
 
     addCharecters = () => {
@@ -27,12 +28,14 @@ class HomeScreen extends Component {
     }
 
     render() {
+        console.log(this.props)
         return(
             <div>
                 { this.addCharecters() }
                 <Link to="/contact">Click aqui</Link>
             </div>
         )
+        
     }
 };
 
@@ -40,4 +43,4 @@ const mapStateToProps = (reducers) => {
     return reducers.usersReducer
 }
 
-export default connect(mapStateToProps, userActions)(HomeScreen);
+export default connect(mapStateToProps, userActions)(Users);

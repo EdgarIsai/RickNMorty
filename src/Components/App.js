@@ -1,12 +1,12 @@
 import React from 'react';
-import '../css/App.css';
+import '../css/index.css';
 import { BrowserRouter, Route } from 'react-router-dom';
-import HomeScreen from './Users/HomeScreen';
+import Users from './Users/Users';
 import Contact from './Contact';
 
 const App = () => (
     <BrowserRouter>
-      <Route exact path="/" component={HomeScreen} />
+    <Route exact path="/" component={Users} />
       <Route exact path="/contact" component={Contact} />
     </BrowserRouter>
   )
